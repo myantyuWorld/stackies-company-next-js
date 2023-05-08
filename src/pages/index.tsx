@@ -18,6 +18,8 @@ export default function Home() {
         <Link href="/posts/first-post">first-post</Link>
         <br/>
         <Link href="/posts/ohbay">ohbay</Link>
+        <br/>
+        <Link href="/dashboard">dashboard</Link>
       </section>
     </Layout>
   );
