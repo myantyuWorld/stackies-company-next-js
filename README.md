@@ -1,3 +1,11 @@
+# stackies_compony_front
+
+案件対応履歴管理システムの「管理者」用アプリケーションを目指す。
+
+Next.js(React, Material Design)での実装を行うものとし、
+APIについては、Stackies PersonのAPIを流用する。
+
+
 # Docker-Next.js
 
 ## Introduction
