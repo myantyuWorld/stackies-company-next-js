@@ -7,7 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-export default function ExperienceIndustry(props) {
+export default function ExperienceProcess(props) {
   function createData(
     name: string,
     calories: string,
@@ -17,25 +17,24 @@ export default function ExperienceIndustry(props) {
   }
 
   const rows = [
-    createData('1', "公共", "03年00ヶ月"),
-    createData('2', "建築", "01年00ヶ月"),
-    createData('3', "AI", "00年09ヶ月"),
-    createData('4', "教育", "00年03ヶ月"),
-    createData('5', "動画", "00年01ヶ月"),
+    createData('1', "要件定義", "1"),
+    createData('2', "基本設計", "3"),
+    createData('3', "詳細設計", "3"),
+    createData('4', "製造・評価", "10"),
+    createData('5', "運用・保守", "0"),
   ];
   return (
     <>
       <Typography sx={{ fontSize: 24 }}>{props.text}</Typography>
       <Card style={props.style}>
         <CardContent>
-          <Typography sx={{ fontSize: 18 }}>業種ランキング</Typography>
+          <Typography sx={{ fontSize: 18 }}>経験した作業工程ごとの回数</Typography>
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 250, height: 250 }} size="small" aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell>No.</TableCell>
-                  <TableCell align="right">業種</TableCell>
-                  <TableCell align="right">経験年数</TableCell>
+                  <TableCell>工程</TableCell>
+                  <TableCell align="right">回数</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -45,9 +44,8 @@ export default function ExperienceIndustry(props) {
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                   >
                     <TableCell component="th" scope="row">
-                      {row.name}
+                      {row.calories}
                     </TableCell>
-                    <TableCell align="right">{row.calories}</TableCell>
                     <TableCell align="right">{row.carbs}</TableCell>
                   </TableRow>
                 ))}

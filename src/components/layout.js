@@ -53,10 +53,7 @@ export default function Layout({ children, home }) {
             Stackies Company!
           </Typography>
           <Box sx={{ flexGrow: 1 }}>
-            <Link href="/posts/ohbay">ユーザー検索</Link>
-          </Box>
-          <Box sx={{ flexGrow: 1 }}>
-            <Link href="/posts/ohbay">案件検索</Link>
+            <Link href="/search-user">ユーザー検索</Link>
           </Box>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
@@ -99,7 +96,7 @@ export default function Layout({ children, home }) {
       <main className={styles.body}>{children}</main>
       {!home && (
         <div className={styles.backToHome, styles.body}>
-          <Link href="/">← Back to home</Link>
+          <Link href="/dashboard">← Back to dashboard</Link>
         </div>
       )}
     </div>
