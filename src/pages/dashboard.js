@@ -9,6 +9,29 @@ export default function DashBoard() {
   const cardStyle = {
     height: '30vw'
   }
+  // TODO : ここの経験した業種ランキングは、会社全体のデータ
+  const industry_summary = [
+    {
+      "name": "公共",
+      "career": "05年00ヶ月"
+    },
+    {
+      "name": "建築",
+      "career": "02年01ヶ月"
+    },
+    {
+      "name": "工業",
+      "career": "01年01ヶ月"
+    },
+    {
+      "name": "配送",
+      "career": "00年11ヶ月"
+    },
+    {
+      "name": "AI",
+      "career": "00年05ヶ月"
+    }
+  ]
   return (
     <Layout>
       <Head>
@@ -20,7 +43,7 @@ export default function DashBoard() {
           <CircleGraph style={cardStyle} text="グラフ"></CircleGraph>
         </Grid>
         <Grid item xs={6}>
-          <ExperienceIndustry style={cardStyle} text="経験業種ランキング"></ExperienceIndustry>
+          <ExperienceIndustry data={industry_summary} style={cardStyle} text="経験業種ランキング(会社全体)"></ExperienceIndustry>
         </Grid>
         <Grid item xs={6}>
           <Item style={cardStyle} text="未定"></Item>

@@ -31,7 +31,7 @@ export default function ExperienceTechnology(props) {
                       {row.name}
                     </TableCell>
                     <TableCell align="right">
-                      <Rating name="half-rating" defaultValue={Number(row.level)} precision={0.5} />
+                      <Rating name="half-rating" defaultValue={Number(row.level)} precision={0.5} readOnly />
                     </TableCell>
                   </TableRow>
                 ))}

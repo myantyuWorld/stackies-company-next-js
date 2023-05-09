@@ -12,7 +12,7 @@ export default function ExperienceIndustry(props) {
     <>
       <Card style={props.style}>
         <CardContent>
-          <Typography sx={{ fontSize: 18 }}>業種ランキング</Typography>
+          <Typography sx={{ fontSize: 18 }}>{props.text}</Typography>
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 250, height: 300 }} size="small" aria-label="simple table">
               <TableHead>
