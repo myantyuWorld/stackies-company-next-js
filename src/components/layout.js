@@ -9,6 +9,7 @@ import Badge from '@mui/material/Badge';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import NotificationButton from './NotificationButton';
 
 import Head from 'next/head';
 import styles from './layout.module.css';
@@ -46,15 +47,7 @@ export default function Layout({ children, home }) {
           </Box>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
+            <NotificationButton/>
             <IconButton
               size="large"
               edge="end"
@@ -82,12 +75,13 @@ export default function Layout({ children, home }) {
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
-      <main className={styles.body}>{children}</main>
       {!home && (
         <div className={styles.backToHome, styles.body}>
           <Link href="/dashboard">← Back to dashboard</Link>
         </div>
       )}
+      <main className={styles.body}>{children}</main>
+
     </div>
   );
 }
