@@ -76,7 +76,7 @@ export default function Layout({ children, home }) {
         </Toolbar>
       </AppBar>
       {!home && (
-        <div className={styles.backToHome, styles.body}>
+        <div className={[styles.backToHome, styles.body]}>
           <Link href="/dashboard">← Back to dashboard</Link>
         </div>
       )}
