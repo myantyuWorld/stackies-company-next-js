@@ -1,7 +1,7 @@
 import { Card, CardContent, Typography } from "@mui/material";
 import SearchUserDetail from "./SearchUserDetail";
 
-export default function SearchUserList(props) {
+export default function SearchUserList(props: { data: any[]; }) {
   return (
     <Card>
       <CardContent>

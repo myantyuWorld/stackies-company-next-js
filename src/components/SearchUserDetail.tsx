@@ -2,8 +2,9 @@ import { Box, Card, CardContent, Grid, Stack, Typography } from "@mui/material";
 import ExperienceIndustry from "./ExperienceIndustry";
 import ExperienceTechnology from "./ExperienceTechnology";
 import ExperienceProcess from "./ExperienceProcess";
+import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from "react";
 
-export default function SearchUserDetail(props) {
+export default function SearchUserDetail(props: { data: { user_id: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; engineer_career: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; technology_summary: any[]; industry_summary: any[]; workprocess_summary: { rd: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; bd: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; dd: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; cd: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; ut: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; it: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; op: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; }; }; }) {
   return (
     <>
       <Stack spacing={4} direction="row">

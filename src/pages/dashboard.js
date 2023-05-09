@@ -40,16 +40,16 @@ export default function DashBoard() {
       <h1>DashBoard</h1>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid item xs={6}>
-          <CircleGraph style={cardStyle} text="グラフ"></CircleGraph>
+          <CircleGraph text="グラフ"></CircleGraph>
         </Grid>
         <Grid item xs={6}>
-          <ExperienceIndustry data={industry_summary} style={cardStyle} text="経験業種ランキング(会社全体)"></ExperienceIndustry>
+          <ExperienceIndustry data={industry_summary}></ExperienceIndustry>
         </Grid>
         <Grid item xs={6}>
-          <Item style={cardStyle} text="未定"></Item>
+          <Item text="未定"></Item>
         </Grid>
         <Grid item xs={6}>
-          <Item style={cardStyle} text="未定"></Item>
+          <Item text="未定"></Item>
         </Grid>
       </Grid>
     </Layout>
