@@ -4,7 +4,6 @@ import ExperienceTechnology from "./ExperienceTechnology";
 import ExperienceProcess from "./ExperienceProcess";
 
 export default function SearchUserDetail(props) {
-  console.log(props.data)
   return (
     <>
       <Stack spacing={4} direction="row">
