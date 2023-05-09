@@ -30,7 +30,7 @@ export default function ExperienceProcess(props) {
         <CardContent>
           <Typography sx={{ fontSize: 18 }}>経験した作業工程ごとの回数</Typography>
           <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 250, height: 250 }} size="small" aria-label="simple table">
+            <Table sx={{ minWidth: 250, height: 300 }} size="small" aria-label="simple table">
               <TableHead>
                 <TableRow>
                   <TableCell>工程</TableCell>
@@ -38,17 +38,34 @@ export default function ExperienceProcess(props) {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {rows.map((row) => (
-                  <TableRow
-                    key={row.name}
-                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                  >
-                    <TableCell component="th" scope="row">
-                      {row.calories}
-                    </TableCell>
-                    <TableCell align="right">{row.carbs}</TableCell>
-                  </TableRow>
-                ))}
+                <TableRow>
+                  <TableCell>要件定義</TableCell>
+                  <TableCell  align="right">{props.data.rd}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>基本設計</TableCell>
+                  <TableCell  align="right">{props.data.bd}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>詳細設計</TableCell>
+                  <TableCell  align="right">{props.data.dd}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>製造</TableCell>
+                  <TableCell  align="right">{props.data.cd}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>単体評価</TableCell>
+                  <TableCell  align="right">{props.data.ut}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>結合・総合評価</TableCell>
+                  <TableCell  align="right">{props.data.it}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>運用保守</TableCell>
+                  <TableCell  align="right">{props.data.op}</TableCell>
+                </TableRow>
               </TableBody>
             </Table>
           </TableContainer>
