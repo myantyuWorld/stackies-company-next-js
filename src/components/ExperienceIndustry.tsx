@@ -6,8 +6,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { CSSProperties, ReactFragment, ReactPortal, ReactElement, JSXElementConstructor } from "react";
 
-export default function ExperienceIndustry(props) {
+export default function ExperienceIndustry(props: { style: CSSProperties | undefined; text: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; data: any[]; }) {
   return (
     <>
       <Card style={props.style}>

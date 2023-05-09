@@ -7,7 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-export default function ExperienceTechnology(props) {
+export default function ExperienceTechnology(props: { data: any[]; }) {
   return (
     <>
       <Card>
