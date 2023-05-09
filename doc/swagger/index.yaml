@@ -1,0 +1,189 @@
+openapi: 3.0.3
+info:
+  title: Stackies API
+  description: |-
+    a
+  version: 1.0.11
+servers:
+  - url: https://petstore3.swagger.io/api/v3
+tags:
+  - name: project_info_summary
+    description: 経験した技術、業種、作業工程を集計した結果を返します
+  - name: pet
+    description: Everything about your Pets
+    externalDocs:
+      description: Find out more
+      url: http://swagger.io
+paths:
+  /project_info_summary:
+    get:
+      tags:
+        - project_info_summary
+      summary: 経験した技術、業種、作業工程を集計した結果を返します
+      description: それぞれ、ユーザーごと、TOP５を返す
+      operationId: project_info_summary
+      parameters:
+        - name: user_id
+          in: query
+          description: dynamodb#project_infoのPKとして設定しているユーザーID
+          required: true
+          explode: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: "成功時のレスポンス"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectInfoSummary'  
+        "400":
+          description: Invalid status value
+      security:
+        - petstore_auth:
+            - write:pets
+            - read:pets
+components:
+  schemas:
+    ProjectInfoSummary:
+      type: object
+      properties:
+        user_id:
+          type: string
+          example: "testuser1"
+        engineer_career:
+          type: string
+          example: "05年01ヶ月"
+        technology_summary:
+          type: object
+          properties:
+            1:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: C#
+                level:
+                  type: string
+                  example: "3.5"
+            2:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Java
+                level:
+                  type: string
+                  example: "3.0"
+            3:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Python
+                level:
+                  type: string
+                  example: "2.0"
+            4:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: ""
+                level:
+                  type: string
+                  example: "0.0"
+            5:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: ""
+                level:
+                  type: string
+                  example: "0.0"
+        industry_summary:
+          type: object
+          properties:
+            1:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: 公共
+                career:
+                  type: string
+                  example: 05年00ヶ月
+            2:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: 建築
+                career:
+                  type: string
+                  example: 04年00ヶ月
+            3:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: 警察
+                career:
+                  type: string
+                  example: 01年00ヶ月
+            4:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: 工業
+                career:
+                  type: string
+                  example: 00年12ヶ月
+            5:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: AI
+                career:
+                  type: string
+                  example: 00年03ヶ月         
+        workprocess_summary:
+          type: object
+          properties:
+            rd:
+              type: integer
+              example: 1
+            bd:
+              type: integer
+              example: 3
+            dd:
+              type: integer
+              example: 10
+            cd:
+              type: integer
+              example: 10
+            ut:
+              type: integer
+              example: 10
+            it:
+              type: integer
+              example: 3
+            op:
+              type: integer
+              example: 0
+  securitySchemes:
+    petstore_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://petstore3.swagger.io/oauth/authorize
+          scopes:
+            write:pets: modify pets in your account
+            read:pets: read your pets
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header
